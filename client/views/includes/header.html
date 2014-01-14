@@ -1,0 +1,48 @@
+<template name="header">
+  <header class="cf">
+    <a class="logo" href="/">MBDEV</a>
+    <nav>
+      <ul class="nav">
+        {{#if currentUser}}
+          <li class="nav-li">
+            <a href="{{racesListPath}}">Race schedule</a>
+          </li>
+        {{/if}}
+        <li class="nav-li">
+          <a href="{{aboutPagePath}}">About</a>
+        </li>
+        <li class="nav-li">
+          <a href="{{resultsListPath}}">Results</a>
+        </li>
+      </ul>
+    </nav>
+    {{#if currentUser}}
+      <div class="account-container">
+        {{#if logginIn}}
+          <span>Loading...</span>
+        {{else}}
+          <a class="username">{{username}}</a>
+        {{/if}}
+        <ul class="account-dropdown">
+          <li class="account-dropdown-li">
+            <a href="{{settingsPagePath}}">Settings</a>
+          </li>
+          <li class="account-dropdown-li">
+            <a href="/logout" class="logout">Sign out</a>
+          </li>
+        </ul>
+      </div>
+    {{else}}
+      <div class="account-container">
+        <ul class="account-ul">
+          <li class="account-li">
+            <a href="{{loginPagePath}}">Login</a>
+          </li>
+          <li class="account-li">
+            <a href="{{registerPagePath}}">Register</a>
+          </li>
+        </ul>
+      </div>
+    {{/if}}
+  </header>
+</template>

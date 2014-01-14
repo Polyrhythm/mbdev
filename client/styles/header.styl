@@ -1,0 +1,32 @@
+@import 'nib'
+
+header
+  width 100%
+  padding 1em 0
+  background #ccc
+
+  .logo, nav, nav .nav-li
+    float left
+    margin-left 1em
+
+  .account-container
+    position absolute
+    right 1em
+    top 1em
+    &:hover
+      .account-dropdown
+        display block
+
+  .username
+    cursor pointer
+    padding 1em
+
+  .account-dropdown
+    display none
+    background #ccc
+    padding 1em
+
+  .account-li
+    float left
+    &:first-of-type
+      margin-right 1em
